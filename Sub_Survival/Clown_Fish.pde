@@ -1,24 +1,40 @@
 //clown fish object
-class Fish1 {
+class Fish {
   //properties
   float x;
   float y;
   String fishtype;
-
   //constructor
-  Fish1() {
+  Fish() {
     x = 700;
     y = (random(100, height));
+
+    //starting position?
+    int integer = int(random(1, 4));
+    //int integer = int number;
+    if (integer==1) {
+      fishtype="Clown";
+    }
+    if (integer==2) {
+      fishtype="Salmon";
+    }
+    if (integer==3) {
+      fishtype="Trout";
+    }
   }
-  //starting position?
 
   //methods
   //displays it
   void display() {
-    if (fishtype == "nemo") {
+    if (fishtype == "Clown") {
       drawclown();
     }
-    if
+    if (fishtype == "Salmon") {
+      drawsalmon();
+    }
+    if (fishtype == "Trout") {
+      drawtrout();
+    }
   }
   void move() {
     x = x-3;
@@ -48,5 +64,33 @@ class Fish1 {
     fill(252, 252, 252);
     rect(x-3, y-9, 3, 18);
     rect(x+5, y-8, 3, 16);
+  }
+  void drawsalmon() {
+    //fish boi(salmon)
+    fill(250, 128, 114);
+    //mainbody
+    ellipse(x, y, 35, 20);
+    fill(251, 166, 156);
+    ellipse(x, y, 25, 13);
+    //tail
+    fill(250, 128, 114);
+    triangle(x+12, y, x+25, y-5, x+25, y+5);
+    //eye
+    fill(0);
+    ellipse(x-9, y-3, 3, 5);
+  }
+  void drawtrout() {
+    //fish boi (trout)
+    fill(144, 139, 139);
+    //mainbody
+    ellipse(x, y, 35, 20);
+    fill(163, 162, 162);
+    ellipse(x, y, 25, 13);
+    //tail
+    fill(144, 139, 139);
+    triangle(x+12, y, x+25, y-5, x+25, y+5);
+    //eye
+    fill(0);
+    ellipse(x-9, y-3, 3, 5);
   }
 }
