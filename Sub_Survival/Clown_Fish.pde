@@ -6,10 +6,10 @@ class Fish {
   String fishtype;
   //constructor
   Fish() {
-    x = 700;
+    //starting position
+    x=(random(710, 1400));
     y = (random(100, height));
-
-    //starting position?
+    //randomizes which fish appear
     int integer = int(random(1, 4));
     //int integer = int number;
     if (integer==1) {
@@ -40,8 +40,8 @@ class Fish {
     x = x-3;
   }
   void reset() {
-    if (x<0) {
-      x=710;
+    if (x<-35) {
+      x=(random(710, 1400));
       y=(random(100, height));
     }
   }

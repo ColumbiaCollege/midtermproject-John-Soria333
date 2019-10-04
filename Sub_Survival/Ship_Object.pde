@@ -3,7 +3,7 @@ class Ship {
   //x and y values of center of ship
   int x1;
   int y1;
-  //decalres that booleans are false
+  //declares that booleans are false
   boolean left = false;
   boolean right = false;
   boolean up = false;
@@ -36,27 +36,40 @@ class Ship {
     //makes the booleans true if certain keys are pressed
     if (keyPressed == true) {
     if (key == 'a') {
-    left = true;
+    //left = true;
+    x1 = x1-5;
     }
-    if (key == 'd') {
-      right = true;
-    }
-    if (key == 'w') {
-      up = true;
-    }
-    if (key == 's') {
-      down = true;
-    }
-    }
-    //makes the booleans false if certain keys are not pressed
     else {
       left = false;
+    }
+    if (key == 'd') {
+      //right = true;
+      x1 = x1+5;
+    }
+    else {
       right = false;
+    }
+    if (key == 'w') {
+      //up = true;
+    }
+    else {
       up = false;
+    }
+    if (key == 's') {
+      //down = true;
+    }
+    else {
       down = false;
     }
+   // makes the booleans false if certain keys are not pressed
+    //else {
+    //  left = false;
+    //  right = false;
+    //  up = false;
+    //  down = false;
+    //}
   }
-  
+  }
   void display(){
     //periscope
     fill(93, 109, 126);
