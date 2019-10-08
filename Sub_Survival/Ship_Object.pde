@@ -8,6 +8,12 @@ class Ship {
   boolean right = false;
   boolean up = false;
   boolean down = false;
+  //These are hopefully going to enable diagonal movement when multiple keys
+  //are pressed.
+  //boolean upleft = false;
+  //boolean upright = false;
+  //boolean downleft = false;
+  //boolean downright = false;
   //constructor
   //makes the ship start in the center of screen
   Ship(){
@@ -33,42 +39,77 @@ class Ship {
     if(down){
       y1 = y1+5;
     }
+    //ditto, up left
+    //if(upleft){
+    //  //y1 = y1-5;
+    //  //x1 = x1-5;
+    //  up = true;
+    //  left = true;
+    //}
+    ////ditto, up right
+    //if(upright){
+    //  //y1 = y1-5;
+    //  //x1 = x1+5;
+    //  up = true;
+    //  right = true;
+    //}
+    ////ditto, down left
+    //if(downleft){
+    //  //y1 = y1+5;
+    //  //x1 = x1-5;
+    //  down = true;
+    //  left = true;
+    //}
+    ////ditto, down right
+    //if(downright){
+    //  //y1 = y1+5;
+    //  //x1 = x1+5;
+    //  down = true;
+    //  right = true;
+    //}
     //makes the booleans true if certain keys are pressed
     if (keyPressed == true) {
     if (key == 'a') {
-    //left = true;
-    x1 = x1-5;
+    left = true;
+    //x1 = x1-5;
     }
     else {
       left = false;
+      //x1=x1+0;
     }
     if (key == 'd') {
-      //right = true;
-      x1 = x1+5;
+      right = true;
+      //x1 = x1+5;
     }
     else {
       right = false;
+      //x1=x1+0;
     }
     if (key == 'w') {
-      //up = true;
+      up = true;
+      //y1=y1-5;
     }
     else {
       up = false;
+      //y1=y1+0;
     }
     if (key == 's') {
-      //down = true;
+      down = true;
+      //y1=y1+5;
     }
     else {
       down = false;
+      //y1=y1+0;
     }
-   // makes the booleans false if certain keys are not pressed
-    //else {
-    //  left = false;
-    //  right = false;
-    //  up = false;
-    //  down = false;
-    //}
+   // if (key == 'w' & 'a')
   }
+  // makes the booleans false if certain keys are not pressed
+  else {
+      left = false;
+      right = false;
+      up = false;
+      down = false;
+    }
   }
   void display(){
     //periscope
