@@ -9,6 +9,7 @@ ArrayList<Fish> school = new ArrayList<Fish>();
 int pmillis;
 int tmillis;
 int time;
+boolean Loss = false;
 //initializes beginning window
 void setup() {
   size(700, 500);
@@ -47,7 +48,8 @@ void draw() {
   //displays timer
   textSize(20);
   text(time, 50, 50);
-  
+  //happens only if you haven't lost
+  if (!Loss){
   //establishes the display, then move, then boundaries of the ship methods 
   Montana.display();
   Montana.move();
@@ -56,5 +58,6 @@ void draw() {
     eachfish.move();
     eachfish.display();
     eachfish.reset();
+  }
   }
 }

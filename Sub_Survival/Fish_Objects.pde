@@ -93,4 +93,22 @@ class Fish {
     fill(0);
     ellipse(x-9, y-3, 3, 5);
   }
+  void gameover() {
+    if (dist(Montana.x1, Montana.y1,school.x, school.y)<)
+    background(31, 97, 141);
+    fill(0);
+    rect(0, 0, width, 100);
+    //the moon
+    fill(245, 243, 206);
+    ellipse(600, 45, 60, 60);
+    fill(255);
+    rect(175, 125, 350, 250);
+    textSize(40);
+    fill(11, 0, 171);
+    text("GAME OVER", 240, 200);
+    textSize(25);
+    text("Your score:", 290, 240);
+    fill(0);
+    text("450", 335, 280);
+  }
 }
