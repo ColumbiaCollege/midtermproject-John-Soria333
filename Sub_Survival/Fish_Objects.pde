@@ -26,6 +26,8 @@ class Fish {
   //methods
   //displays it
   void display() {
+    fill(31, 97, 141);
+    circle(x,y,35);
     if (fishtype == "Clown") {
       drawclown();
     }

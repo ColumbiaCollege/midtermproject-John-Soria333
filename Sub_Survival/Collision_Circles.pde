@@ -1,4 +1,9 @@
 void setup() {
+  int x1=100;
+  int y1=200;
+  int x=500;
+  int y=200;
+  //noStroke();
   size(700, 500);
     background(31, 97, 141);
     fill(0);
@@ -7,6 +12,9 @@ void setup() {
   fill(245, 243, 206);
   ellipse(600, 45, 60, 60);
   //periscope
+  fill(31, 97, 141);
+  //circle
+    circle(x1, y1-7, 75);
     fill(93, 109, 126);
     rect(x1+10, y1-40, 20, 8);
     rect(x1+10, y1-40, 8, 25);
@@ -22,6 +30,9 @@ void setup() {
     ellipse(x1-20, y1, 12, 12);
     //right porthole
     ellipse(x1+20, y1, 12, 12);
+    //circle
+    fill(31, 97, 141);
+    circle(x,y,35);
     //fish boi (trout)
     fill(144, 139, 139);
     //mainbody

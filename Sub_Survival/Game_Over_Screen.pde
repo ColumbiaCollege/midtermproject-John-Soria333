@@ -1,4 +1,4 @@
-void setup() {
+void gameover() {
   size(700, 500);
     background(31, 97, 141);
     fill(0);
