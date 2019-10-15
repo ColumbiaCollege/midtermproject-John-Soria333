@@ -48,6 +48,9 @@ class Fish {
     }
   }
   void drawclown() {
+    fill(31, 97, 141);
+    //circle
+    circle(x1, y1-7, 75);
     //fish boi(nemo)
     fill(225, 112, 0);
     //mainbody
@@ -68,6 +71,9 @@ class Fish {
     rect(x+5, y-8, 3, 16);
   }
   void drawsalmon() {
+    fill(31, 97, 141);
+    //circle
+    circle(x1, y1-7, 75);
     //fish boi(salmon)
     fill(250, 128, 114);
     //mainbody
@@ -82,6 +88,9 @@ class Fish {
     ellipse(x-9, y-3, 3, 5);
   }
   void drawtrout() {
+    fill(31, 97, 141);
+    //circle
+    circle(x1, y1-7, 75);
     //fish boi (trout)
     fill(144, 139, 139);
     //mainbody
@@ -96,7 +105,7 @@ class Fish {
     ellipse(x-9, y-3, 3, 5);
   }
   void gameover() {
-    if (dist(Montana.x1, Montana.y1,school.x, school.y)<)
+    if (dist(Montana.x1, Montana.y1,school.x, school.y)<37.5)
     background(31, 97, 141);
     fill(0);
     rect(0, 0, width, 100);
