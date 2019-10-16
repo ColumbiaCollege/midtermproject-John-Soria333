@@ -9,9 +9,8 @@ class Fish {
     //starting position
     x=(random(710, 1400));
     y = (random(100, height));
-    //randomizes which fish appear
+    //randomizes which fish appear using dice roller
     int integer = int(random(1, 4));
-    //int integer = int number;
     if (integer==1) {
       fishtype="Clown";
     }
@@ -26,8 +25,6 @@ class Fish {
   //methods
   //displays it
   void display() {
-    fill(31, 97, 141);
-    circle(x,y,35);
     if (fishtype == "Clown") {
       drawclown();
     }
@@ -38,9 +35,11 @@ class Fish {
       drawtrout();
     }
   }
+  //moves fish
   void move() {
     x = x-3;
   }
+  //if fish goes offscreen to the left, resets fish in random spot to the right
   void reset() {
     if (x<-35) {
       x=(random(710, 1400));
@@ -48,9 +47,6 @@ class Fish {
     }
   }
   void drawclown() {
-    fill(31, 97, 141);
-    //circle
-    circle(x1, y1-7, 75);
     //fish boi(nemo)
     fill(225, 112, 0);
     //mainbody
@@ -71,9 +67,6 @@ class Fish {
     rect(x+5, y-8, 3, 16);
   }
   void drawsalmon() {
-    fill(31, 97, 141);
-    //circle
-    circle(x1, y1-7, 75);
     //fish boi(salmon)
     fill(250, 128, 114);
     //mainbody
@@ -88,9 +81,6 @@ class Fish {
     ellipse(x-9, y-3, 3, 5);
   }
   void drawtrout() {
-    fill(31, 97, 141);
-    //circle
-    circle(x1, y1-7, 75);
     //fish boi (trout)
     fill(144, 139, 139);
     //mainbody
@@ -103,23 +93,5 @@ class Fish {
     //eye
     fill(0);
     ellipse(x-9, y-3, 3, 5);
-  }
-  void gameover() {
-    if (dist(Montana.x1, Montana.y1,school.x, school.y)<37.5)
-    background(31, 97, 141);
-    fill(0);
-    rect(0, 0, width, 100);
-    //the moon
-    fill(245, 243, 206);
-    ellipse(600, 45, 60, 60);
-    fill(255);
-    rect(175, 125, 350, 250);
-    textSize(40);
-    fill(11, 0, 171);
-    text("GAME OVER", 240, 200);
-    textSize(25);
-    text("Your score:", 290, 240);
-    fill(0);
-    text("450", 335, 280);
   }
 }

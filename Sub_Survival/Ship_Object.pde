@@ -46,7 +46,7 @@ class Ship {
     //  up = true;
     //  left = true;
     //}
-    ////ditto, up right
+    //ditto, up right
     //if(upright){
     //  //y1 = y1-5;
     //  //x1 = x1+5;
@@ -101,7 +101,7 @@ class Ship {
       down = false;
       //y1=y1+0;
     }
-   // if (key == 'w' & 'a')
+    //if (key == 'a' ||'w')
   }
   // makes the booleans false if certain keys are not pressed
   else {
@@ -111,6 +111,7 @@ class Ship {
       down = false;
     }
   }
+  //displays ship
   void display(){
     //periscope
     fill(93, 109, 126);
@@ -144,6 +145,18 @@ class Ship {
     }
     if (y1 > 480) {
       y1 = 480;
+    }
+  }
+  //if fish and ship collide, game over
+  void collide(Fish fish){
+    //fancy Joe trig
+    float theta1 = atan2(fish.y - y1,fish.x - x1);
+    float theta2 = atan2(y1 - fish.y ,x1 - fish.x);
+    float radius1 = sqrt(sq(40*cos(theta1)) + sq(20*sin(theta1)));
+    float radius2 = sqrt(sq(5*cos(theta2)) + sq(10*sin(theta2)));
+    //if ship and fish touch, lose
+    if(dist(x1,y1,fish.x,fish.y)<radius1+radius2){
+      Loss=true;
     }
   }
 }

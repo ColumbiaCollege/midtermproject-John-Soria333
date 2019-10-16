@@ -1,11 +1,10 @@
 //John Soria
-//Objects (using ship)
+//Midterm Game
 //declares the ship
 Ship Montana;
-//Fish [] fishes;
-// obejct array example or arraylist
+//Object arraylist for Fish
 ArrayList<Fish> school = new ArrayList<Fish>();
-// Objects can be added to an ArrayList with add()
+//establishes variables and boolean
 int pmillis;
 int tmillis;
 int time;
@@ -17,29 +16,35 @@ void setup() {
   //night sky
   fill(0);
   rect(0, 0, width, 50);
-  noStroke();
   //declares that ship is new object of class Ship
   Montana = new Ship();
+  //declares that school to add to makes new fish
   school.add(new Fish());
-  // check out millis for a timer
-  time = 0;
 }
+
 //begins draw loop
 void draw() {
-  // timer
-  if (millis() - pmillis >= 7000){
-    // do a thing
-    //println('s');
-    school.add(new Fish());
-    pmillis = millis();
-  }
-  // second timer for displaying
-  if (millis() - tmillis >=1000){
-    time = time + 1;
-    tmillis = millis();
-  }
-  //wipe with ocean background and night sky
+  //turns off stroke
+  noStroke();
+// timer
+if (millis() - pmillis >= 7000) {
+  // create a new fish in the game every 7 seconds
+  school.add(new Fish());
+  //resets pmillis to current time in order to "reset" timer
+  pmillis = millis();
+}
+// second timer for displaying score
+if (millis() - tmillis >=1000) {
+  //adds to timer every second that passes
+  time = time + 1;
+  //resets tmillis to current time to "reset" timer
+  tmillis = millis();
+}
+//happens only if you haven't lost
+if (!Loss) {
+  //wipe with ocean background
   background(31, 97, 141);
+  //wipe with night sky
   fill(0);
   rect(0, 0, width, 100);
   //the moon
@@ -48,16 +53,34 @@ void draw() {
   //displays timer
   textSize(20);
   text(time, 50, 50);
-  //happens only if you haven't lost
-  if (!Loss){
   //establishes the display, then move, then boundaries of the ship methods 
   Montana.display();
   Montana.move();
   Montana.boundaries();
-  for (Fish eachfish : school){
+  for (Fish eachfish : school) {
     eachfish.move();
     eachfish.display();
     eachfish.reset();
+    Montana.collide(eachfish);
   }
+  //when you lose, gives a game over screen with final score
+  if (Loss) {
+    size(700, 500);
+    background(31, 97, 141);
+    fill(0);
+    rect(0, 0, width, 100);
+    //the moon
+    fill(245, 243, 206);
+    ellipse(600, 45, 60, 60);
+    //game over window
+    fill(245, 243, 206);
+    rect(175, 125, 350, 250);
+    textSize(40);
+    fill(31, 97, 141);
+    text("GAME OVER", 240, 200);
+    textSize(25);
+    text("Your score:", 290, 240);
+    text(time, 335, 280);
   }
+}
 }
